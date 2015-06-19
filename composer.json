@@ -4,7 +4,18 @@
   "authors": [
     {
       "name": "Giuseppe Aremare",
-      "email": "g.aremare@palmabit.com"
+      "email": "g.aremare@palmabit.com",
+      "website":"palmabit.com"
+    },
+    {
+      "name": "Francesco Falanga",
+      "email": "f.falanga@palmabit.com",
+      "website":"palmabit.com"
+    },
+    {
+      "name": "Alessandro Sarzina",
+      "email": "a.sarzina@palmabit.com",
+      "website":"palmabit.com"
     }
   ],
   "require": {
