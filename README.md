@@ -1,9 +1,9 @@
 # ContactCSV
 
-### This plugin allows you to easily save data in CSV format without having to write code also losing time to test it.
-###     *   Powerful
-###     *   Easy -to-use
-###     *   ...and fully tested!
+ This plugin allows you to easily save data in CSV format without having to write code also losing time to test it.
+     *   Powerful
+     *   Easy -to-use
+     *   ...and fully tested!
 
 ## Installation
 
