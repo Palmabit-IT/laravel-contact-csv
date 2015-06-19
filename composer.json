@@ -1,0 +1,44 @@
+{
+  "name": "palmabit/contact-csv",
+  "description": "",
+  "authors": [
+    {
+      "name": "Giuseppe Aremare",
+      "email": "g.aremare@palmabit.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "laravel/framework": "5.0.*",
+    "illuminate/config": "~5.0"
+  },
+  "require-dev": {
+    "fzaninotto/faker": "^1.5",
+    "illuminate/support": "5.0.*",
+    "illuminate/filesystem": "~5.0",
+    "phpunit/phpunit": "~4.0",
+    "phpspec/phpspec": "~2.1",
+    "orchestra/testbench": "~3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Palmabit\\ContactCsv\\": "src/Palmabit/ContactCsv",
+      "Palmabit\\ContactCsv\\modules\\": "src/Palmabit/ContactCsv/modules",
+      "Palmabit\\ContactCsv\\exceptions\\": "src/Palmabit/ContactCsv/exceptions",
+      "Palmabit\\ContactCsv\\traits\\": "src/Palmabit/ContactCsv/traits",
+      "Palmabit\\ContactCsv\\services\\": "src/Palmabit/ContactCsv/services",
+      "Palmabit\\Tests\\": "tests/"
+    }
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/TestCase.php",
+      "tests/ExampleTest.php",
+      "tests/ContactCsvTest.php"
+    ],
+    "psr-4": {
+      "Palmabit\\Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "stable"
+}
