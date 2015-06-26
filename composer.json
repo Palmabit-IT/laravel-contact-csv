@@ -4,18 +4,15 @@
   "authors": [
     {
       "name": "Giuseppe Aremare",
-      "email": "g.aremare@palmabit.com",
-      "website":"palmabit.com"
+      "email": "g.aremare@palmabit.com"
     },
     {
       "name": "Francesco Falanga",
-      "email": "f.falanga@palmabit.com",
-      "website":"palmabit.com"
+      "email": "f.falanga@palmabit.com"
     },
     {
       "name": "Alessandro Sarzina",
-      "email": "a.sarzina@palmabit.com",
-      "website":"palmabit.com"
+      "email": "a.sarzina@palmabit.com"
     }
   ],
   "require": {
@@ -37,16 +34,10 @@
       "Palmabit\\ContactCsv\\modules\\": "src/Palmabit/ContactCsv/modules",
       "Palmabit\\ContactCsv\\exceptions\\": "src/Palmabit/ContactCsv/exceptions",
       "Palmabit\\ContactCsv\\traits\\": "src/Palmabit/ContactCsv/traits",
-      "Palmabit\\ContactCsv\\services\\": "src/Palmabit/ContactCsv/services",
-      "Palmabit\\Tests\\": "tests/"
+      "Palmabit\\ContactCsv\\services\\": "src/Palmabit/ContactCsv/services"
     }
   },
   "autoload-dev": {
-    "classmap": [
-      "tests/TestCase.php",
-      "tests/ExampleTest.php",
-      "tests/ContactCsvTest.php"
-    ],
     "psr-4": {
       "Palmabit\\Tests\\": "tests/"
     }

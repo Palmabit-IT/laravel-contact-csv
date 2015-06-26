@@ -2,25 +2,19 @@
 
 use Illuminate\Contracts\Console\Kernel;
 
+class TestCase extends \Orchestra\Testbench\TestCase {
 
-class TestCase extends \Orchestra\Testbench\TestCase
-{
+  protected function getPackageProviders($app) {
+    return [
+      'Palmabit\ContactCsv\ContactCsvServiceProvider',
+    ];
+  }
 
-
-	protected function getPackageProviders()
-	{
-		return [
-			'Palmabit\ContactCsv\ContactCsvServiceProvider',
-		];
-	}
-
-	/**
-	 * @test
-	 */
-	public function test()
-	{
-		$this->assertTrue(true);
-	}
-
+  /**
+   * @test
+   */
+  public function test() {
+    $this->assertTrue(true);
+  }
 
 }
