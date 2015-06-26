@@ -1,29 +1,30 @@
-# ContactCSV
+# LaravelContactCSV
 
 [![Build Status](https://travis-ci.org/Palmabit-IT/ContactCsv.svg?branch=master)](https://travis-ci.org/Palmabit-IT/ContactCsv)
 
- This plugin allows you to easily save data in CSV format without having to write code also losing time to test it.
-     *   Powerful
-     *   Easy -to-use
-     *   ...and fully tested!
+ This Laravel package allows you to easily save contact data in CSV format.
+
+     *   Easy-to-use
+     *   Unit tested
 
 ## Installation
 
-### to install this plugin to run these simple commands
+### to install this package run these simple commands
 
 1. `composer require`
 2. `add Palmabit\ContactCsv\ContactCsvServiceProvider your ServiceProviders`
-3. `create csv file and set the absolute path for this into configuration file`
-4. `complete to configure the config files`
+3. `create csv file and set the absolute path into configuration file`
+4. `complete the configuration file`
 5. `let's started!`
 
 ## Usage
 
-TODO: Write usage instructions
+//TODO
 
 ## Credits
 
-## Palmabit-IT
+Palmabit-IT
+
 
 ## License
 
