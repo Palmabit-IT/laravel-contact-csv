@@ -1,5 +1,7 @@
 # ContactCSV
 
+[![Build Status](https://travis-ci.org/Palmabit-IT/ContactCsv.svg?branch=master)](https://travis-ci.org/Palmabit-IT/ContactCsv)
+
  This plugin allows you to easily save data in CSV format without having to write code also losing time to test it.
      *   Powerful
      *   Easy -to-use
