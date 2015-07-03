@@ -26,13 +26,6 @@ trait GetterTrait {
   /**
    * @return mixed
    */
-  public function getAutocreate() {
-    return $this->getConfig()[ 'autocreate' ];
-  }
-
-  /**
-   * @return mixed
-   */
   public function getFieldsConfig() {
     return config('ContactCsv::fields');
   }

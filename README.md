@@ -1,11 +1,9 @@
 # LaravelContactCSV
 
 [![Build Status](https://travis-ci.org/Palmabit-IT/ContactCsv.svg?branch=master)](https://travis-ci.org/Palmabit-IT/ContactCsv)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Palmabit-IT/ContactCsv/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Palmabit-IT/ContactCsv/?branch=master)
 
  This Laravel package allows you to easily save contact data in CSV format.
-
-     *   Easy-to-use
-     *   Unit tested
 
 ## Installation
 

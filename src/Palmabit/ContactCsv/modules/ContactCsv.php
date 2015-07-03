@@ -12,8 +12,14 @@ class ContactCsv {
 
   use GetterTrait;
 
-  function __construct() {
+  public function __construct() {
     $this->services = new ContactCsvServices();
+
+  }
+
+  public static function save(array $input) {
+    $contactCsv = new ContactCsv();
+    return $contactCsv->appendCsv($input);
 
   }
 
@@ -25,9 +31,6 @@ class ContactCsv {
   public function appendCsv(array $input) {
     if ($this->checkExistCsvFile()) {
       $this->services->save($input);
-    } elseif ($this->checkAutocreate()) {
-      $this->services->createCsvFile();
-      $this->services->save($input);
     } else {
       throw new ConfigValueException;
     }
@@ -36,10 +39,6 @@ class ContactCsv {
 
   public function checkExistCsvFile() {
     return File::exists($this->getPath());
-  }
-
-  public function checkAutocreate() {
-    return (boolean)$this->getAutocreate();
   }
 
   /**

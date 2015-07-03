@@ -10,6 +10,17 @@ class TestCase extends \Orchestra\Testbench\TestCase {
     ];
   }
 
+  public function setUp () {
+    if (! $this->app) {
+      $this->refreshApplication();
+    }
+    $this->cleanData();
+  }
+
+  protected function cleanData () {
+    file_put_contents(__DIR__ . '/data/data.csv', '');
+  }
+
   /**
    * @test
    */

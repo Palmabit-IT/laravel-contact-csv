@@ -4,6 +4,8 @@ use Palmabit\ContactCsv\modules\ContactCsv;
 
 class ContactCsvTest extends TestCase {
 
+  use ContactCsvStub;
+
   protected function getEnvironmentSetUp($app) {
     $app[ 'config' ]->set('ContactCsv::config.pathDataCsvFile', __DIR__ . '/data/data.csv');
 
@@ -11,19 +13,18 @@ class ContactCsvTest extends TestCase {
 
   /**
    * @test
-   *
    */
   public function checkExistCsvFile_test() {
-    $module = new ContactCsv();
-    $this->assertTrue($module->checkExistCsvFile());
+    $contactCsv = new ContactCsv();
+    $this->assertTrue($contactCsv->checkExistCsvFile());
   }
 
   /**
    * @test
-   *
    */
-  public function checkAutocreate_test() {
-    $module = new ContactCsv();
-    $this->assertFalse($module->checkAutocreate());
+  public function testCanStaticallyInstanceContactCsv () {
+      ContactCsv::save($this->contactStub());
+
   }
+
 }

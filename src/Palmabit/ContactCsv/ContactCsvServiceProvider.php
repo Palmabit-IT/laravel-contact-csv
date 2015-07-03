@@ -28,8 +28,7 @@ class ContactCsvServiceProvider extends ServiceProvider
 		$this->publishes([
 			__DIR__ . '/config/config.php' => config_path($this->getBasePath() . 'config.php'),
 			__DIR__ . '/config/fields.php' => config_path($this->getBasePath() . 'fields.php'),
-			__DIR__ . '/data/data.csv'     => base_path('/data/data.csv'),
-//			__DIR__ . '/../../config/acl_sentry.php'      => config_path('acl_sentry.php'),
+			__DIR__ . '/data/data.csv'     => base_path('/data/data.csv')
 		]);
 	}
 
@@ -61,14 +60,5 @@ class ContactCsvServiceProvider extends ServiceProvider
 	{
 		return $this->basePath;
 	}
-
-	/**
-	 * publish csv file. This function is called if autocreate value is true and file not exist into given path
-	 */
-	public static function publishDataCsv()
-	{
-		parent::publishes([__DIR__ . '/data/data.csv' => base_path('/data/data.csv')]);
-	}
-
 
 }
