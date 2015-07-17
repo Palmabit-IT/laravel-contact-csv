@@ -22,8 +22,8 @@ class ContactCsvServicesTest extends TestCase {
 
   /**
    * @test
-   * @throws \Palmabit\ContactCsv\exceptions\ExistKeyException
-   * @expectedException \Palmabit\ContactCsv\exceptions\ExistKeyException
+   * @throws \Palmabit\ContactCsv\exceptions\KeyExistException
+   * @expectedException \Palmabit\ContactCsv\exceptions\KeyExistException
    */
   public function uniqueKey_test_itThrowException() {
     $service = new ContactCsvServices();

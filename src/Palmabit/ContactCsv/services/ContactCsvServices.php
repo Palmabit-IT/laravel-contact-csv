@@ -1,7 +1,8 @@
 <?php namespace Palmabit\ContactCsv\services;
 
 use Illuminate\Support\Facades\File;
-use Palmabit\ContactCsv\exceptions\ExistKeyException;
+use Palmabit\ContactCsv\exceptions\ConfigValueException;
+use Palmabit\ContactCsv\exceptions\KeyExistException;
 use Palmabit\ContactCsv\traits\GetterTrait;
 
 class ContactCsvServices {
@@ -41,7 +42,7 @@ class ContactCsvServices {
   }
 
   /**
-   * @throws \Palmabit\ContactCsv\exceptions\ConfigValueException
+   * @throws ConfigValueException
    * @codeCoverageIgnore
    */
   private function writeHeader() {
@@ -51,7 +52,7 @@ class ContactCsvServices {
   /**
    * @param $csv
    * @param $input
-   * @throws ExistKeyException
+   * @throws KeyExistException
    */
   public function keyExist($csv, $input) {
     $header   = $this->getHeader($csv);
@@ -60,7 +61,7 @@ class ContactCsvServices {
       $arrayRow = explode(',', $singleRowCsv);
       if (array_key_exists($this->getFieldKey(), $input)) {
         if (trim($arrayRow[ $indexKey ]) == $input[ $this->getFieldKey() ]) {
-          throw new ExistKeyException;
+          throw new KeyExistException;
         }
       }
     }

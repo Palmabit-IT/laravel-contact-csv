@@ -26,8 +26,7 @@ class ContactCsvServiceProvider extends ServiceProvider
 	protected function publishConfig()
 	{
 		$this->publishes([
-			__DIR__ . '/config/config.php' => config_path($this->getBasePath() . 'config.php'),
-			__DIR__ . '/config/fields.php' => config_path($this->getBasePath() . 'fields.php')
+			__DIR__ . '/config/config.php' => config_path('contactcsv.php')
 		]);
 	}
 
@@ -38,7 +37,6 @@ class ContactCsvServiceProvider extends ServiceProvider
 	 */
 	public function register()
 	{
-		$this->mergeConfigFrom(__DIR__ . '/config/fields.php', 'contactcsv');
 		$this->mergeConfigFrom(__DIR__ . '/config/config.php', 'contactcsv');
 	}
 
