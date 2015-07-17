@@ -32,7 +32,7 @@ class ContactCsv {
     if ($this->checkExistCsvFile()) {
       $this->services->save($input);
     } else {
-      throw new ConfigValueException;
+      throw new ConfigValueException('');
     }
 
   }

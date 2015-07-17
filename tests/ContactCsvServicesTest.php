@@ -7,11 +7,6 @@ class ContactCsvServicesTest extends TestCase {
 
   use ContactCsvStub;
 
-  protected function getEnvironmentSetUp($app) {
-    $app[ 'config' ]->set('ContactCsv::config.pathDataCsvFile', __DIR__ . '/data/data.csv');
-
-  }
-
   /**
    * @test
    */

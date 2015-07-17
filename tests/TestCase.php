@@ -10,6 +10,10 @@ class TestCase extends \Orchestra\Testbench\TestCase {
     ];
   }
 
+  protected function getEnvironmentSetUp($app) {
+    $app[ 'config' ]->set('contactcsv.pathDataCsvFile', __DIR__ . '/data/data.csv');
+  }
+
   public function setUp () {
     if (! $this->app) {
       $this->refreshApplication();

@@ -20,32 +20,25 @@ trait GetterTrait {
    * @return Config
    */
   public function getConfig() {
-    return config('ContactCsv::config');
-  }
-
-  /**
-   * @return mixed
-   */
-  public function getFieldsConfig() {
-    return config('ContactCsv::fields');
+    return config('contactcsv');
   }
 
   /**
    * @return mixed
    */
   public function getFieldsArray() {
-    return $this->getFieldsConfig()[ 'fields' ];
+    return config('contactcsv.fields');
   }
 
   public function getFieldKey() {
-    return $this->getFieldsConfig()[ 'key' ];
+    return config('contactcsv.key');
   }
 
   public function getDelimitator() {
-    if (is_null($this->getFieldsConfig()[ 'delimitator' ]) || empty($this->getFieldsConfig()[ 'delimitator' ])) {
+    if (is_null($this->getConfig()[ 'delimitator' ]) || empty($this->getConfig()[ 'delimitator' ])) {
       return ',';
     }
 
-    return $this->getFieldsConfig()[ 'delimitator' ];
+    return $this->getConfig()[ 'delimitator' ];
   }
 }
