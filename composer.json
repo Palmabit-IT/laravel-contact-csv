@@ -1,46 +1,55 @@
 {
-  "name": "palmabit/contact-csv",
-  "description": "",
-  "authors": [
-    {
-      "name": "Giuseppe Aremare",
-      "email": "g.aremare@palmabit.com"
+    "name": "laravel-contact-csv",
+    "description": "Save contact input in csv file",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Giuseppe Aremare",
+            "email": "g.aremare@palmabit.com"
+        },
+        {
+            "name": "Francesco Falanga",
+            "email": "f.falanga@palmabit.com"
+        },
+        {
+            "name": "Alessandro Sarzina",
+            "email": "a.sarzina@palmabit.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "laravel/framework": "5.0.*",
+        "illuminate/config": "~5.0",
+        "sensiolabs/security-checker": "^2.0"
     },
-    {
-      "name": "Francesco Falanga",
-      "email": "f.falanga@palmabit.com"
+    "require-dev": {
+        "fzaninotto/faker": "^1.5",
+        "illuminate/support": "5.0.*",
+        "illuminate/filesystem": "~5.0",
+        "phpunit/phpunit": "~4.0",
+        "phpspec/phpspec": "~2.1",
+        "orchestra/testbench": "~3.0"
     },
-    {
-      "name": "Alessandro Sarzina",
-      "email": "a.sarzina@palmabit.com"
+    "autoload": {
+        "psr-4": {
+            "Palmabit\\ContactCsv\\": "src/Palmabit/ContactCsv",
+            "Palmabit\\ContactCsv\\modules\\": "src/Palmabit/ContactCsv/modules",
+            "Palmabit\\ContactCsv\\exceptions\\": "src/Palmabit/ContactCsv/exceptions",
+            "Palmabit\\ContactCsv\\traits\\": "src/Palmabit/ContactCsv/traits",
+            "Palmabit\\ContactCsv\\services\\": "src/Palmabit/ContactCsv/services"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Palmabit\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php vendor/bin/security-checker security:check --format=simple"
+        ],
+        "post-update-cmd": [
+            "php vendor/bin/security-checker security:check --format=simple"
+        ]
     }
-  ],
-  "require": {
-    "php": ">=5.4.0",
-    "laravel/framework": "5.0.*",
-    "illuminate/config": "~5.0"
-  },
-  "require-dev": {
-    "fzaninotto/faker": "^1.5",
-    "illuminate/support": "5.0.*",
-    "illuminate/filesystem": "~5.0",
-    "phpunit/phpunit": "~4.0",
-    "phpspec/phpspec": "~2.1",
-    "orchestra/testbench": "~3.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "Palmabit\\ContactCsv\\": "src/Palmabit/ContactCsv",
-      "Palmabit\\ContactCsv\\modules\\": "src/Palmabit/ContactCsv/modules",
-      "Palmabit\\ContactCsv\\exceptions\\": "src/Palmabit/ContactCsv/exceptions",
-      "Palmabit\\ContactCsv\\traits\\": "src/Palmabit/ContactCsv/traits",
-      "Palmabit\\ContactCsv\\services\\": "src/Palmabit/ContactCsv/services"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Palmabit\\Tests\\": "tests/"
-    }
-  },
-  "minimum-stability": "stable"
 }
