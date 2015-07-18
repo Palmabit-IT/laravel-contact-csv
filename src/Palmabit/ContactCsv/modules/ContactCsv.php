@@ -45,8 +45,9 @@ class ContactCsv {
    * @return mixed
    * @codeCoverageIgnore
    */
-  public static function downloadCsv() {
-    return Response::download(self::getPath());
+  public static function download() {
+    $contactCsv = new ContactCsv();
+    return Response::download($contactCsv->getPath(), basename($contactCsv->getPath()), ['Content-Type: text/csv']);
   }
 
 }
