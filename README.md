@@ -5,6 +5,7 @@
 
 ## Installation
 To install this package follow these instructions
+
 1. `composer require laravel-contact-csv`
 2. `add Palmabit\ContactCsv\ContactCsvServiceProvider to your config/app.php ServiceProviders`
 3. `php artisan vendor:publish --provider="Palmabit\ContactCsv\ContactCsvServiceProvider"`
@@ -12,6 +13,7 @@ To install this package follow these instructions
 5. `complete the second configuration file: config/packages/Palmabit/ContactCsv/field.php`
 
 ## Usage
+
 ### Save new row in csv file
 
 ```php
