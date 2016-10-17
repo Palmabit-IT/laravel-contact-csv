@@ -6,7 +6,7 @@
 ## Installation
 To install this package follow these instructions
 
-1. `composer require laravel-contact-csv`
+1. `composer require palmabit/laravel-contact-csv`
 2. add `Palmabit\ContactCsv\ContactCsvServiceProvider` to your `config/app.php` ServiceProviders
 3. `php artisan vendor:publish --provider="Palmabit\ContactCsv\ContactCsvServiceProvider"`
 4. create csv file and set the absolute path into configuration file `config/packages/Palmabit/ContactCsv/config.php`

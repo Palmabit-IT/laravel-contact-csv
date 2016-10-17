@@ -1,7 +1,7 @@
 {
     "name": "palmabit/laravel-contact-csv",
     "description": "Save contact input in csv file",
-    "version": "0.0.7",
+    "version": "1.0.0",
     "license": "MIT",
     "authors": [
         {
