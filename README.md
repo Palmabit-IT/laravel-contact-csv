@@ -7,10 +7,10 @@
 To install this package follow these instructions
 
 1. `composer require laravel-contact-csv`
-2. `add Palmabit\ContactCsv\ContactCsvServiceProvider to your config/app.php ServiceProviders`
+2. add `Palmabit\ContactCsv\ContactCsvServiceProvider` to your `config/app.php` ServiceProviders
 3. `php artisan vendor:publish --provider="Palmabit\ContactCsv\ContactCsvServiceProvider"`
-4. `create csv file and set the absolute path into configuration file: config/packages/Palmabit/ContactCsv/config.php`
-5. `complete the second configuration file: config/packages/Palmabit/ContactCsv/field.php`
+4. create csv file and set the absolute path into configuration file `config/packages/Palmabit/ContactCsv/config.php`
+5. fill generated config file
 
 ## Usage
 
@@ -18,7 +18,7 @@ To install this package follow these instructions
 
 ```php
 
-$my_array = ["email" => "f.falanga2@palmabit.com"];
+$my_array = ["email" => "test@test.com"];
 try {
    ContactCsv::save($newletter);
 
@@ -50,7 +50,7 @@ The build is continuously run on travis.
 - update doc
 
 ## Author
-[palmabit.com](http://www.palmabit.com)
+[palmabit.com](http://palmabit.com)
 
 ## License
 LaravelContactCSV it's free and easy to integrate within your existing projects. [See the MIT License](http://opensource.org/licenses/MIT)
