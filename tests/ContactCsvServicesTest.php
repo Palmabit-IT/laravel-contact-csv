@@ -7,16 +7,24 @@ class ContactCsvServicesTest extends TestCase {
 
   use ContactCsvStub;
 
+  protected  $service;
+  public function setUp()
+  {
+    parent::setUp();
+
+    $this->service = new ContactCsvServices();
+  }
   /**
    * @test
    */
   public function testHeaderExist() {
-    $service          = new ContactCsvServices();
     $csvFake_noheader = ['lorem,ipsum,sit@sit.com'];
     $csvFake          = ['name,surname,email', 'lorem,ipsum,sit@sit.com'];
 
-    $this->assertFalse($service->checkHeaderExist($csvFake_noheader));
-    $this->assertTrue($service->checkHeaderExist($csvFake));
+    $checkHeaderExist = $this->getPrivateMethod($this->service,"checkHeaderExist");
+
+    $this->assertFalse($checkHeaderExist->invokeArgs($this->service,[$csvFake_noheader]));
+    $this->assertTrue($checkHeaderExist->invokeArgs($this->service,[$csvFake]));
 
   }
 
@@ -26,10 +34,11 @@ class ContactCsvServicesTest extends TestCase {
    * @expectedException \Palmabit\ContactCsv\exceptions\KeyExistException
    */
   public function uniqueKey_test_itThrowException() {
-    $service = new ContactCsvServices();
+
     $csv     = ['name,surname,email', 'lorem,ipsum,dolor@dolor.com'];
     $input   = ['email' => 'dolor@dolor.com'];
-    $service->keyExist($csv, $input);
+
+    $this->service->keyExist($csv, $input);
   }
 
   /**
@@ -38,10 +47,11 @@ class ContactCsvServicesTest extends TestCase {
   public function testUniqueKeyExist() {
     $faker   = Factory::create();
     $data    = $faker->name . ',' . $faker->lastName . ',' . $faker->email;
-    $service = new ContactCsvServices();
+
     $csv     = ['name,surname,email', $data];
     $input   = ['email' => 'dolor@dolor.com'];
-    $service->keyExist($csv, $input);
+
+    $this->service->keyExist($csv, $input);
   }
 
   /**
@@ -61,8 +71,9 @@ class ContactCsvServicesTest extends TestCase {
    */
   public function save_test() {
     $input   = $this->contactStub();
-    $service = new ContactCsvServices();
-    $service->save($input);
+
+    $this->service->save($input);
+
     $file        = file(__DIR__ . '/data/data.csv');
     $csvLastData = explode(',', array_pop($file));
 

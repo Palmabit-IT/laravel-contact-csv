@@ -1,6 +1,7 @@
 <?php namespace Palmabit\Tests;
 
 use Illuminate\Contracts\Console\Kernel;
+use ReflectionClass;
 
 class TestCase extends \Orchestra\Testbench\TestCase {
 
@@ -30,6 +31,15 @@ class TestCase extends \Orchestra\Testbench\TestCase {
    */
   public function test() {
     $this->assertTrue(true);
+  }
+
+
+  public function getPrivateMethod($class,$method)
+  {
+    $class = new ReflectionClass(get_class($class));
+    $method = $class->getMethod($method);
+    $method->setAccessible(true);
+    return $method;
   }
 
 }

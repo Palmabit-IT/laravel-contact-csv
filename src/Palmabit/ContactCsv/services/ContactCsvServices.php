@@ -31,7 +31,7 @@ class ContactCsvServices {
 
   }
 
-  public function checkHeaderExist($csv) {
+  private function checkHeaderExist($csv) {
     $headerCsvFile = $this->getHeader($csv);
     $header        = $this->getFieldsArray();
 

@@ -19,8 +19,17 @@ class ContactCsv {
 
   public static function save(array $input) {
     $contactCsv = new ContactCsv();
-    return $contactCsv->appendCsv($input);
+    $contactCsv->appendCsv($input);
 
+  }
+
+  /**
+   * @return mixed
+   * @codeCoverageIgnore
+   */
+  public static function download() {
+    $contactCsv = new ContactCsv();
+    return Response::download($contactCsv->getPath(), basename($contactCsv->getPath()), ['Content-Type: text/csv']);
   }
 
   /**
@@ -28,7 +37,7 @@ class ContactCsv {
    * @throws ConfigValueException
    * @codeCoverageIgnore
    */
-  public function appendCsv(array $input) {
+  private function appendCsv(array $input) {
     if ($this->checkExistCsvFile()) {
       $this->services->save($input);
     } else {
@@ -39,15 +48,6 @@ class ContactCsv {
 
   public function checkExistCsvFile() {
     return File::exists($this->getPath());
-  }
-
-  /**
-   * @return mixed
-   * @codeCoverageIgnore
-   */
-  public static function download() {
-    $contactCsv = new ContactCsv();
-    return Response::download($contactCsv->getPath(), basename($contactCsv->getPath()), ['Content-Type: text/csv']);
   }
 
 }
