@@ -28,7 +28,8 @@
         "illuminate/filesystem": "5.*",
         "phpunit/phpunit": "~4.0",
         "phpspec/phpspec": "~2.1",
-        "orchestra/testbench": "~3.0"
+        "orchestra/testbench": "~3.0",
+        "sensiolabs/security-checker":"*"
     },
     "autoload": {
         "psr-4": {
